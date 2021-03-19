@@ -70,10 +70,11 @@ ControllerBase::ControllerBase(Config& cfg) :
 
 	_heater = _last_heater = false;
 
-	pinMode(BUZZER_A, OUTPUT);
-	pinMode(BUZZER_B, OUTPUT);
+	pinMode(BUZZER, OUTPUT);
 
-	tone(BUZZER_A, 440, 100);
+	digitalWrite(BUZZER, 1);
+	delay(100);
+	digitalWrite(BUZZER, 0);
 
 	setPID("default");
 
@@ -203,6 +204,7 @@ const char * ControllerBase::translate_mode(MODE_t mode)
 		case ERROR_OFF: return  "Error"; break;
 		case REFLOW: return  "Reflow"; break;
 		case REFLOW_COOL: return  "Cooldown"; break;
+		default: return "Unknown"; break;
 	}
 }
 

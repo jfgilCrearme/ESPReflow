@@ -24,17 +24,17 @@
 #include "Config.h"
 #include <PID_AutoTune_v0.h>  // https://github.com/t0mpr1c3/Arduino-PID-AutoTune-Library
 
-#define thermoDO 12 // D7
-#define thermoCS 13 // D6
-#define thermoCLK 14 // D5
-#define RELAY 3
-#define LED_RED 0
-#define LED_GREEN 1
-#define LED_BLUE 2
-#define BUZZER_A 5
-#define BUZZER_B 4
-#define PCA9536_SDA 2
-#define PCA9536_SCL 0
+#define thermoDO 12
+#define thermoCS 13
+#define thermoCLK 14
+#define RELAY 15
+#define LED_RED 2
+#define LED_GREEN 16
+#define LED_BLUE 5
+#define BUZZER 3
+// #define BUZZER_B 4
+// #define PCA9536_SDA 2
+// #define PCA9536_SCL 0
 
 #define DEFAULT_TARGET 60
 #define MAX_ON_TIME 1000 * 60 * 2
