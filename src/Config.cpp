@@ -159,26 +159,26 @@ bool Config::load_json(const String& name, size_t max_size, THandlerFunction_par
 	return parsed;
 }
 
-bool Config::setup_OTA() {
-	Serial.println("OTA setup");
+// bool Config::setup_OTA() {
+// 	Serial.println("OTA setup");
 
-	OTA = new EasyOTA(hostname);
+// 	OTA = new EasyOTA(hostname);
 
-	std::map<String, String>::iterator I = networks.begin();
-	while (I != networks.end()) {
-		OTA->addAP(I->first, I->second);
-		Serial.println("Add network: " + I->first);
-		I++;
-	}
+// 	std::map<String, String>::iterator I = networks.begin();
+// 	while (I != networks.end()) {
+// 		OTA->addAP(I->first, I->second);
+// 		Serial.println("Add network: " + I->first);
+// 		I++;
+// 	}
 
-	OTA->onConnect([](const String& ssid, EasyOTA::STATE state) {
-		S_printf("Connected %s, state: %s", ssid.c_str(), state == EasyOTA::EOS_STA ? "Station" : "Access Point");
-	});
+// 	OTA->onConnect([](const String& ssid, EasyOTA::STATE state) {
+// 		S_printf("Connected %s, state: %s", ssid.c_str(), state == EasyOTA::EOS_STA ? "Station" : "Access Point");
+// 	});
 
-	OTA->onMessage([](const String& msg, int line) {
-		S_printf("OTA message: %s", msg.c_str());
-	});
-}
+// 	OTA->onMessage([](const String& msg, int line) {
+// 		S_printf("OTA message: %s", msg.c_str());
+// 	});
+// }
 
 bool Config::save_config(AsyncWebServerRequest *request, uint8_t * data, size_t len, size_t index, size_t total) {
 	return save_file(request, cfgName, data, len, index, total);
