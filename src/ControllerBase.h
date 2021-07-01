@@ -27,11 +27,11 @@
 #define thermoDO 12
 #define thermoCS 13
 #define thermoCLK 14
-#define RELAY 15
-#define LED_RED 2
-#define LED_GREEN 16
-#define LED_BLUE 5
-#define BUZZER 3
+#define RELAY 4
+// #define LED_RED 2
+#define LED_GREEN 2
+#define LED_BLUE 16
+#define BUZZER 5
 // #define BUZZER_B 4
 // #define PCA9536_SDA 2
 // #define PCA9536_SCL 0
